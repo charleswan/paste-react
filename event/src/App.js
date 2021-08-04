@@ -17,6 +17,9 @@ import {
 } from "react-router-dom";
 import Product from './components/Product'
 import ProductContent from './components/ProductContent'
+import Pcontent from './components/Pcontent'
+import Background from './components/Background'
+import Login from './components/Login'
 
 function App() {
   return (
@@ -35,50 +38,62 @@ function App() {
     //   {/* <AxiosSample /> */}
     // </div>
 
+    // <Router>
+    //   <div>
+    //     <ul>
+    //       <li>
+    //         <Link to="/">Home</Link>
+    //       </li>
+    //       <li>
+    //         <Link to="/about">About</Link>
+    //       </li>
+    //       <li>
+    //         <Link to="/topics">Topics</Link>
+    //       </li>
+    //       <li>
+    //         <Link to="/content">Content</Link>
+    //       </li>
+    //       <li>
+    //         <Link to="/Product">Product</Link>
+    //       </li>
+    //       <li>
+    //         <Link to="/productcontent">ProductContent</Link>
+    //       </li>
+    //     </ul>
+
+    // <Route exact path="/" component={Home} />
+    // <Route path="/about" component={About} />
+    // <Route path="/topics" component={Topics} />
+    // <Route path="/content/:aid" component={Content} />
+    // <Route path="/Product" component={Product} />
+    // <Route path="/productcontent" component={ProductContent} />
+
+    // {/* <Switch>
+    //   <Route path="/about">
+    //     <About />
+    //   </Route>
+    //   <Route path="/topics">
+    //     <Topics />
+    //   </Route>
+    //   <Route path="/">
+    //     <Home />
+    //   </Route>
+    //   <Route path="/content">
+    //     <Content />
+    //   </Route>
+    // </Switch> */}
+    // </div>
+    // </Router>
+
+    // <div>
+    //   <h2>react 请求数据实现 无人点餐、无人收银系统 商品列表 商品详情</h2>
+    // </div>
+
     <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/topics">Topics</Link>
-          </li>
-          <li>
-            <Link to="/content">Content</Link>
-          </li>
-          <li>
-            <Link to="/Product">Product</Link>
-          </li>
-          <li>
-            <Link to="/productcontent">ProductContent</Link>
-          </li>
-        </ul>
-
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/topics" component={Topics} />
-        <Route path="/content/:aid" component={Content} />
-        <Route path="/Product" component={Product} />
-        <Route path="/productcontent" component={ProductContent} />
-
-        {/* <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/topics">
-            <Topics />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-          <Route path="/content">
-            <Content />
-          </Route>
-        </Switch> */}
+        <Route exact path="/" component={Background} />
+        <Route exact path="/login" component={Login} />
+        <Route path="/pcontent/:id" component={Pcontent} />
       </div>
     </Router>
   );
