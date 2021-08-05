@@ -154,10 +154,25 @@ function App() {
         <Route /> */}
         {
           routes.map((route, key) => {
+            // if (route.exact) {
+            //   return <Route key={key} exact path={route.path} component={route.component} routes={route.routes}/>
+            // } else {
+            //   return <Route key={key} path={route.path} component={route.component} routes={route.routes}/>
+            // }
             if (route.exact) {
-              return <Route key={key} exact path={route.path} component={route.component} />
+              return <Route key={key} exact path={route.path}
+                render={props => (
+                  // pass the sub-routes down to keep nesting
+                  <route.component {...props} routes={route.routes} />
+                )}
+              />
             } else {
-              return <Route key={key} path={route.path} component={route.component} />
+              return <Route key={key} path={route.path}
+                render={props => (
+                  // pass the sub-routes down to keep nesting
+                  <route.component {...props} routes={route.routes} />
+                )}
+              />
             }
           })
         }
