@@ -1,4 +1,3 @@
-import HomeUser from './components/HomeUser'
 // import Topics from './components/Topics'
 // import About from './components/About'
 // import Content from './components/Content'
@@ -20,8 +19,50 @@ import {
 // import Pcontent from './components/Pcontent'
 // import Background from './components/Background'
 // import Login from './components/Login'
-import User from './components/User'
-import Shop from './components/Shop';
+
+// import User from './components/User'
+// import Shop from './components/Shop';
+// import HomeUser from './components/HomeUser'
+
+import routes from './model/router';
+
+{/* <Router>
+<div>
+  <header className='title'>
+    <Link to='/'>首页组件</Link>
+    <Link to='/user'>用户组件</Link>
+    <Link to='/shop'>商户组件</Link>
+  </header>
+
+  <Route exact path='/' component={HomeUser}/>
+  <Route path='/user' component={User}/>
+  <Route path='/shop' component={Shop}/>
+  <Route />
+</div>
+</Router> */}
+
+
+
+// const routes = [
+//   {
+//     path: "/sandwiches",
+//     component: Sandwiches
+//   },
+//   {
+//     path: "/tacos",
+//     component: Tacos,
+//     routes: [
+//       {
+//         path: "/tacos/bus",
+//         component: Bus
+//       },
+//       {
+//         path: "/tacos/cart",
+//         component: Cart
+//       }
+//     ]
+//   }
+// ];
 
 function App() {
   return (
@@ -107,10 +148,19 @@ function App() {
           <Link to='/shop'>商户组件</Link>
         </header>
 
-        <Route exact path='/' component={HomeUser}/>
-        <Route path='/user' component={User}/>
-        <Route path='/shop' component={Shop}/>
-        <Route />
+        {/* <Route exact path='/' component={HomeUser} />
+        <Route path='/user' component={User} />
+        <Route path='/shop' component={Shop} />
+        <Route /> */}
+        {
+          routes.map((route, key) => {
+            if (route.exact) {
+              return <Route key={key} exact path={route.path} component={route.component} />
+            } else {
+              return <Route key={key} path={route.path} component={route.component} />
+            }
+          })
+        }
       </div>
     </Router>
   );
