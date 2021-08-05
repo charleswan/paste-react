@@ -10,6 +10,8 @@ import '../assets/css/index.css'
 import Info from './User/Info'
 import Main from './User/Main'
 
+// 仿自: 饿了么安全应急响应中心(https://security.ele.me/)
+
 class User extends Component {
     constructor(props) {
         super(props);

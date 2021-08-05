@@ -7,8 +7,8 @@ class ShopAdd extends Component {
     }
     render() {
         return (
-            <div>
-                
+            <div className="shop">
+                增加商户
             </div>
         );
     }

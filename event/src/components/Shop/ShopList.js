@@ -7,8 +7,8 @@ class ShopList extends Component {
     }
     render() {
         return (
-            <div>
-                
+            <div className="shop">
+                增加列表
             </div>
         );
     }
