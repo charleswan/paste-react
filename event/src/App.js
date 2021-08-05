@@ -1,7 +1,7 @@
-import Home from './components/Home'
-import Topics from './components/Topics'
-import About from './components/About'
-import Content from './components/Content'
+import HomeUser from './components/HomeUser'
+// import Topics from './components/Topics'
+// import About from './components/About'
+// import Content from './components/Content'
 // import News from './components/News'
 // import List from './components/List'
 // import TodoList from './components/TodoList'
@@ -15,11 +15,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Product from './components/Product'
-import ProductContent from './components/ProductContent'
-import Pcontent from './components/Pcontent'
-import Background from './components/Background'
-import Login from './components/Login'
+// import Product from './components/Product'
+// import ProductContent from './components/ProductContent'
+// import Pcontent from './components/Pcontent'
+// import Background from './components/Background'
+// import Login from './components/Login'
+import User from './components/User'
+import Shop from './components/Shop';
 
 function App() {
   return (
@@ -89,11 +91,26 @@ function App() {
     //   <h2>react 请求数据实现 无人点餐、无人收银系统 商品列表 商品详情</h2>
     // </div>
 
+    // <Router>
+    //   <div>
+    //     <Route exact path="/" component={Background} />
+    //     <Route exact path="/login" component={Login} />
+    //     <Route path="/pcontent/:id" component={Pcontent} />
+    //   </div>
+    // </Router>
+
     <Router>
       <div>
-        <Route exact path="/" component={Background} />
-        <Route exact path="/login" component={Login} />
-        <Route path="/pcontent/:id" component={Pcontent} />
+        <header className='title'>
+          <Link to='/'>首页组件</Link>
+          <Link to='/user'>用户组件</Link>
+          <Link to='/shop'>商户组件</Link>
+        </header>
+
+        <Route exact path='/' component={HomeUser}/>
+        <Route path='/user' component={User}/>
+        <Route path='/shop' component={Shop}/>
+        <Route />
       </div>
     </Router>
   );
